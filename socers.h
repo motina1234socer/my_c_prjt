@@ -14,7 +14,7 @@ int playsound(const char* name)
     PlaySoundA(name, 0, SND_FILENAME | SND_ASYNC);
 	return 0;
 }
-int tpw(const char* txt, int spd, bool lin)
+int tpw(const char* txt, int spd = 40, bool lin = true)
 {
     int count = 0;
     while (txt[count] != '\0')
