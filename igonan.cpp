@@ -6,4 +6,5 @@
 int main()
 {
 	tpw("Which game should I make");
+	keywait(32);
 }
