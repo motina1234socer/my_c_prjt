@@ -3,24 +3,41 @@
 
 #include <stdio.h>
 #include <stdbool.h>
-#include <windows.h>
 #include <string.h>
 #include <conio.h>
+#include <windows.h>
+#include <iostream>
+#include <string>
+
+
 
 // 한 글자씩 글자 출력. 
 // 첫 번째 인수는 출력할 문자열. 두 번째 인수는 글자 사이의 기다릴 시간(ms) 세 번째 인수는 출력 완료 후 개행 여부.
-int tpw(const char* txt, int spd, bool lin)
+int tpw(std::string txt, int spd = 25, bool lin = true)
 {
-    int count = 0;
-    while (txt[count] != '\0')
+    for(size_t i = 0; i < txt.length(); ++i)
     {
-        printf("%c", txt[count]);
+        std::cout << txt[i];
         Sleep(spd);
-        ++count;
     }
     if (lin)
     {
-        printf("\n");
+        std::cout << "\n";
+    }
+    
+    return 0;
+}
+int wtpw(std::wstring txt, int spd = 25, bool lin = true)
+{
+    for(size_t i = 0; i < txt.length(); ++i)
+    {
+        std::wcout << txt[i];
+        Sleep(spd);
+    }
+    
+    if (lin)
+    {
+        std::wcout << "\n";
     }
     
     return 0;
